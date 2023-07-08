@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <title>Team Membership Application </title>
+</head>
+<body>
+    <div class="container">
+        <header>Team Registration</header>
+        <div class="imgi">
+            <div>
+                <h1>IMPACT</h1>
+                <p>Innovative Minds Pushing Ahead with Creative Technology</p>
+            </div>
+           
+        </div>
+
+        <form id="submit-form"  action="">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input name="name" type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input name="dob" type="date" placeholder="Enter birth date" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input name="email" type="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input name="number" type="number" placeholder="Enter mobile number" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select name="gender" required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Course</label>
+                            <select name="course" required>
+                                <option disabled selected>Course</option>
+                                <option>BTECH</option>
+                                <option>INTMCA</option>
+                                <option>RMCA</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+            
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Experience</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>What motivated you to apply to join the IMPACT team?</label>
+                            <input name="q1" type="text" placeholder="Enter Answer" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>What skills or expertise do you bring to the team</label>
+                            <input name="q2" type="text" placeholder="Enter Answer" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Have you worked in a collaborative team environment before?</label>
+                            <select name="q3" required>
+                                <option disabled selected>Answer </option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Maybe</option>
+                            </select>
+                        </div>
+
+                       
+                    </div>
+                </div>
+
+                <div class="details family">
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Back</span>
+                        </div>
+                        
+                        <button  value="Submit" class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxon53o5fNqHD5XlgzKfNuBY7mlKfFlv4qunhZsWbq-slbgApTnaNzrTcf8oBuGKCI4XA/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
